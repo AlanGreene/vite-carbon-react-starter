@@ -1,3 +1,34 @@
-@use '@carbon/react' with (
+// To import everything:
+// @use '@carbon/react' with (
+//   $font-path: '@ibm/plex'
+// );
+
+// Alternatively to import just the required styles:
+
+// Configure feature flags if needed, if not these
+// lines can be removed
+@use '@carbon/react/scss/config' with (
   $font-path: '@ibm/plex'
+  //, $use-flexbox-grid: 'true'
+  //, $prefix: 'bx'
 );
+
+// Emit the css reset
+@use '@carbon/react/scss/reset';
+
+// Emit the Plex font-face declarations
+@use '@carbon/react/scss/fonts';
+
+// // Optional: emit the grid styles if using the grid.
+// // This will emit the flex-grid styles if
+// // $use-flexbox-grid is configured to 'true'
+// @use '@carbon/react/scss/grid';
+
+// // Emit the layer styles
+// @use '@carbon/react/scss/layer';
+
+// Emit individual component styles
+@use '@carbon/react/scss/components/button';
+
+// // Use additional local stylesheets
+// @use 'sample-grid';
