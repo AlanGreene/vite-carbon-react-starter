@@ -19,6 +19,9 @@
 // Emit the Plex font-face declarations
 @use '@carbon/react/scss/fonts';
 
+@use '@carbon/react/scss/theme';
+@use '@carbon/react/scss/themes';
+
 // // Optional: emit the grid styles if using the grid.
 // // This will emit the flex-grid styles if
 // // $use-flexbox-grid is configured to 'true'
@@ -29,6 +32,16 @@
 
 // Emit individual component styles
 @use '@carbon/react/scss/components/button';
+@use '@carbon/react/scss/components/text-input';
+@use '@carbon/react/scss/components/toggle';
 
 // // Use additional local stylesheets
 // @use 'sample-grid';
+
+:root {
+  @include theme.theme(themes.$g90);
+}
+
+[data-carbon-theme='g10'] {
+  @include theme.theme(themes.$g10);
+}
